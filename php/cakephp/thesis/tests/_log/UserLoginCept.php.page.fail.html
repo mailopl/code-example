@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>
+    	CakePHP: the rapid development php framework:
+		Feeds	</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+
+      <link href="/apigeum/favicon.ico" type="image/x-icon" rel="icon" /><link href="/apigeum/favicon.ico" type="image/x-icon" rel="shortcut icon" /><link rel="stylesheet" type="text/css" href="/apigeum/css/jquery-ui-1.8.16.bootstrap.css" /><link rel="stylesheet" type="text/css" href="/apigeum/css/cosmo/bootstrap.min.css" /><link rel="stylesheet" type="text/css" href="/apigeum/css/dt.bootstrap.css" /><link rel="stylesheet" type="text/css" href="/apigeum/css/custom.css" />
+      <script type="text/javascript">
+          var webroot = '/apigeum/';
+      </script>
+      
+    <!-- Le styles -->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+  </head>
+
+  <body>
+	
+	<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="/apigeum/">apigeum</a>
+      <div class="nav-collapse">
+        <ul class="nav">
+            <li class="active"><a href="/apigeum/">Home</a></li>
+            <li><a href="/apigeum/feeds">Repositories</a></li>
+
+                        <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    My options                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/apigeum/feeds/add">Add Repository</a></li>
+
+
+                    <li><a href="/apigeum/feeds/my">My Repositories</a></li>
+                    <li><a href="/apigeum/keys/my">My API keys</a></li>
+                    <li><a href="/apigeum/keys/sold">Customers</a></li>
+                    <li><a href="/apigeum/feeds/favs">Favourites</a></li>
+
+                </ul>
+            </li>
+            
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Help                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/apigeum/pages/api-usage">How to use the API</a></li>
+                    <li><a href="/apigeum/pages/premium">Premium</a></li>
+
+                </ul>
+            </li>
+                             <li><a href="/apigeum/users/logout">Log out</a></li>
+            
+
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+        
+		<div class="feeds index">
+    <h2>Available repositories</h2>
+
+	<table cellpadding="0" cellspacing="0" class="table table-bordered table-hover table-striped">
+        <tr>
+            <th><a href="/apigeum/feeds/index/sort:name/direction:asc">Name</a></th>
+
+            <th><a href="/apigeum/feeds/index/sort:views_count/direction:asc">Views</a></th>
+            <th><a href="/apigeum/feeds/index/sort:created/direction:asc">Created</a></th>
+            <th><a href="/apigeum/feeds/index/sort:modified/direction:asc">Modified</a></th>
+            <th><a href="/apigeum/feeds/index/sort:rows_count/direction:asc">Entries</a></th>
+            <th><a href="/apigeum/feeds/index/sort:type/direction:asc">Type</a></th>
+        </tr>
+
+                <tr>
+            <td>
+                <a href="/apigeum/feeds/view/45" title="http://localhost/apigeum/api/my-paid-repository">My paid repository</a>            </td>
+            <td>2</td>
+            <td>12/10/12</td>
+            <td>12/27/12</td>
+
+
+            <td>4</td>
+            <td>Premium</td>
+        </tr>
+                <tr>
+            <td>
+                <a href="/apigeum/feeds/view/46" title="http://localhost/apigeum/api/my-free-repository">My free repository</a>            </td>
+            <td>1</td>
+            <td>12/11/12</td>
+            <td>01/19/13</td>
+
+
+            <td>1</td>
+            <td>Free</td>
+        </tr>
+                <tr>
+            <td>
+                <a href="/apigeum/feeds/view/47" title="http://localhost/apigeum/api/miasta">miasta</a>            </td>
+            <td>0</td>
+            <td>12/27/12</td>
+            <td>12/27/12</td>
+
+
+            <td>2</td>
+            <td>Free</td>
+        </tr>
+                <tr>
+            <td>
+                <a href="/apigeum/feeds/view/48" title="http://localhost/apigeum/api/samochody">samochody</a>            </td>
+            <td>2</td>
+            <td>12/27/12</td>
+            <td>12/27/12</td>
+
+
+            <td>1</td>
+            <td>Premium</td>
+        </tr>
+                <tr>
+            <td>
+                <a href="/apigeum/feeds/view/62" title="http://localhost/apigeum/api/tablety8">tablety8</a>            </td>
+            <td>2</td>
+            <td>01/13/13</td>
+            <td>01/13/13</td>
+
+
+            <td>0</td>
+            <td>Free</td>
+        </tr>
+                <tr>
+            <td>
+                <a href="/apigeum/feeds/view/69" title="http://localhost/apigeum/api/moje-altka">moje ałtka</a>            </td>
+            <td>8</td>
+            <td>01/19/13</td>
+            <td>01/19/13</td>
+
+
+            <td>0</td>
+            <td>Free</td>
+        </tr>
+        	</table>
+
+    <p>
+    Page 1 of 1, showing 6 records out of 6 total, starting on record 1, ending on 6	</p>
+
+<div class="paging">
+    <span class="prev disabled btn">&lt; previous</span><span class="next disabled btn">next &gt;</span></div></div>
+		<hr>
+		<footer>
+        	<p>&copy; Marcin Wawrzyniak | 2013
+                                            </p>
+      	</footer>
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="/apigeum/js/jquery.js"></script><script type="text/javascript" src="/apigeum/js/jquery-ui.min.js"></script><script type="text/javascript" src="/apigeum/js/jquery.dataTables.js"></script><script type="text/javascript" src="/apigeum/js/jquery.jeditable.js"></script><script type="text/javascript" src="/apigeum/js/jquery.dataTables.editable.js"></script><script type="text/javascript" src="/apigeum/js/jquery.validate.js"></script><script type="text/javascript" src="/apigeum/js/onload.js"></script><script type="text/javascript" src="/apigeum/theme/TwitterBootstrap/js/bootstrap-transition.js"></script><script type="text/javascript" src="/apigeum/theme/TwitterBootstrap/js/bootstrap-alert.js"></script><script type="text/javascript" src="/apigeum/theme/TwitterBootstrap/js/bootstrap-modal.js"></script><script type="text/javascript" src="/apigeum/theme/TwitterBootstrap/js/bootstrap-dropdown.js"></script><script type="text/javascript" src="/apigeum/theme/TwitterBootstrap/js/bootstrap-scrollspy.js"></script><script type="text/javascript" src="/apigeum/theme/TwitterBootstrap/js/bootstrap-tab.js"></script><script type="text/javascript" src="/apigeum/theme/TwitterBootstrap/js/bootstrap-tooltip.js"></script><script type="text/javascript" src="/apigeum/theme/TwitterBootstrap/js/bootstrap-popover.js"></script><script type="text/javascript" src="/apigeum/theme/TwitterBootstrap/js/bootstrap-button.js"></script><script type="text/javascript" src="/apigeum/theme/TwitterBootstrap/js/bootstrap-collapse.js"></script><script type="text/javascript" src="/apigeum/theme/TwitterBootstrap/js/bootstrap-carousel.js"></script><script type="text/javascript" src="/apigeum/theme/TwitterBootstrap/js/bootstrap-typeahead.js"></script>    
+	
+  </body>
+</html>

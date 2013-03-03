@@ -1,0 +1,112 @@
+
+div.dataTables_length label {
+    width: 460px;
+    float: left;
+    text-align: left;
+}
+
+div.dataTables_length select {
+    /*width: 75px;*/
+}
+
+div.dataTables_filter label {
+    float: right;
+    /*width: 460px;*/
+}
+
+div.dataTables_info {
+    padding-top: 8px;
+}
+
+div.dataTables_paginate {
+    float: right;
+    margin: 0;
+}
+
+table {
+    /*margin: 1em 0;*/
+    margin-bottom: 6px !important;
+    clear: both;
+}
+
+table.dataTable th:active {
+    outline: none;
+}
+
+
+
+
+
+table.table thead .sorting,
+table.table thead .sorting_asc,
+table.table thead .sorting_desc,
+table.table thead .sorting_asc_disabled,
+table.table thead .sorting_desc_disabled {
+    cursor: pointer;
+    *cursor: hand;
+}
+
+table.table thead .sorting { background: url('images/sort_both.png') no-repeat center right; }
+table.table thead .sorting_asc { background: url('images/sort_asc.png') no-repeat center right; }
+table.table thead .sorting_desc { background: url('images/sort_desc.png') no-repeat center right; }
+
+table.table thead .sorting_asc_disabled { background: url('images/sort_asc_disabled.png') no-repeat center right; }
+table.table thead .sorting_desc_disabled { background: url('images/sort_desc_disabled.png') no-repeat center right; }
+
+
+
+
+
+
+table form, table form input{
+    padding:0;
+    margin:0;
+}
+.dataTables_wrapper label input, .dataTables_wrapper label textarea, .dataTables_wrapper label select{
+    display:inline-block;
+}
+form .column{
+    width:100px;
+    display:inline-block;
+    /*float:left;*/
+    margin:5px;
+}
+
+body{
+    /*background-color: #DDD;*/
+}
+
+
+.form-left{
+    float:left;
+margin-right:10px;
+}
+
+legend{
+    font-family: 'PT Sans', sans-serif;
+}
+
+table.grid input{
+     max-width:100px;
+}
+
+
+.dataTables_processing{
+    font-weight: bold;
+    color: cornflowerBlue;
+    margin-left: 20px;
+    
+    
+    text-align: center;
+    
+    background-image: url('../img/ajax.gif');
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+    width: 60px;
+    margin: auto;
+    background-position-x: right;
+}
+
+.typeahead{
+    z-index: 1051;
+}

@@ -1,0 +1,445 @@
+<html>
+ <head>
+	<title>Test results</title>
+	<link href='http://fonts.googleapis.com/css?family=Varela+Round&v2' rel='stylesheet' type='text/css'>
+
+	 <style>
+		 .layout {
+		 margin: 0 auto;
+		 width: 960px;
+
+		 }
+		 body { font-family: arial, serif; margin: 0; padding 0; background: #333;}
+		 h1,h2,h3 { arial, serif; color: white; }
+		 h1 { font-size: 2.5em; }
+		 h2 { font-size: 1.3em; }
+         h3 { font-size: 1em; color: #84BBDD; margin: 0.5em 0;}
+
+		 table {border: none; margin: 0; padding 0;}
+		 .scenarioStepsTable .stepName { padding: 5px }
+
+		 .scenarioStepsTable td {
+		 font-size: 80%;
+		 border: 1px solid #ccc;
+		 font-family: 'Varela Round', arial;
+		 -webkit-border-radius: 5px;
+		 -moz-border-radius: 5px;
+		 border-radius: 5px;
+		 background: rgb(255,255,255); /* Old browsers */
+		 background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+		 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+		 background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+		 background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera11.10+ */
+		 background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+		 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+		 background: linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+
+		 }
+
+		 p {
+		    cursor: pointer;
+		 padding: 5px;
+
+		 -webkit-border-radius: 5px;
+		 -moz-border-radius: 5px;
+		 border-radius: 5px;
+
+		 }
+
+		 .header { font-size: large; font-weight: bold; }
+		 p.scenarioSuccess {
+		 background: rgb(157,213,58); /* Old browsers */
+		 background: -moz-linear-gradient(top, rgba(157,213,58,1) 0%, rgba(161,213,79,1) 50%, rgba(124,188,10,1) 100%); /* FF3.6+ */
+		 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(157,213,58,1)), color-stop(50%,rgba(161,213,79,1)), color-stop(100%,rgba(124,188,10,1))); /* Chrome,Safari4+ */
+		 background: -webkit-linear-gradient(top, rgba(157,213,58,1) 0%,rgba(161,213,79,1) 50%,rgba(124,188,10,1) 100%); /* Chrome10+,Safari5.1+ */
+		 background: -o-linear-gradient(top, rgba(157,213,58,1) 0%,rgba(161,213,79,1) 50%,rgba(124,188,10,1) 100%); /* Opera11.10+ */
+		 background: -ms-linear-gradient(top, rgba(157,213,58,1) 0%,rgba(161,213,79,1) 50%,rgba(124,188,10,1) 100%); /* IE10+ */
+		 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dd53a', endColorstr='#7cbc0a',GradientType=0 ); /* IE6-9 */
+		 background: linear-gradient(top, rgba(157,213,58,1) 0%,rgba(161,213,79,1) 50%,rgba(124,188,10,1) 100%); /* W3C */
+
+		 }
+
+
+		 .scenario { color: black; }
+		 p.scenarioFailed { color: black;
+		 background: rgb(204,0,0); /* Old browsers */
+		 background: -moz-linear-gradient(top, rgba(204,0,0,1) 0%, rgba(119,0,0,1) 100%); /* FF3.6+ */
+		 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(204,0,0,1)), color-stop(100%,rgba(119,0,0,1))); /* Chrome,Safari4+ */
+		 background: -webkit-linear-gradient(top, rgba(204,0,0,1) 0%,rgba(119,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+		 background: -o-linear-gradient(top, rgba(204,0,0,1) 0%,rgba(119,0,0,1) 100%); /* Opera11.10+ */
+		 background: -ms-linear-gradient(top, rgba(204,0,0,1) 0%,rgba(119,0,0,1) 100%); /* IE10+ */
+		 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc0000', endColorstr='#770000',GradientType=0 ); /* IE6-9 */
+		 background: linear-gradient(top, rgba(204,0,0,1) 0%,rgba(119,0,0,1) 100%); /* W3C */
+		 }
+
+
+		 table.scenarioFailed tr:last-child { font-weight: bold; color: red }
+
+		 td.scenarioSuccess { color: green }
+		 td.scenarioFailed { color: red }
+		 .scenarioSkipped { color: teal; }
+		 .scenarioIncomplete { color: gray; }
+		 .scenarioStepsTable { margin-left: 10px; display: none; color: #333; }
+
+		 #stepContainerSummary {
+		 background: white;
+		 -webkit-border-radius: 5px;
+		 -moz-border-radius: 5px;
+		 border-radius: 5px;
+		 padding: 20px;
+		 }
+	 </style>
+
+  <script type="text/javascript">
+  function showHide(nodeId, linkObj)
+  {
+    var subObj = document.getElementById('stepContainer' + nodeId);
+
+    if (linkObj.innerHTML.indexOf('+')>0) {
+      linkObj.innerHTML = linkObj.innerHTML.replace('+','-');
+      subObj.style.display='block';
+      subObj.style.width = '100%';
+    } else {
+      linkObj.innerHTML = linkObj.innerHTML.replace('-','+');
+      subObj.style.display='none';
+    }
+  }
+  </script>
+ </head>
+
+ <body>
+ <div class="layout">
+ <h1>Codeception Results <small><span style="color: green">OK</span> (3.5s)</small></h1>
+
+
+	 <table border="0" style="width: 100%;">
+		<tr>
+ <td>
+     <h3>Acceptance Tests</h3>
+ </td>
+</tr>   <tr>
+    <td>
+     <p class="scenarioSuccess" onclick="showHide('1', this)">[+] login (UserLoginCept.php) (0.58s)</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioSuccess scenarioStepsTable" id="stepContainer1">
+      <tr>
+       <td class="stepName">I am on page <span style="color: #732E81;">"/users/login"</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I see in current url <span style="color: #732E81;">"/users/login"</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I see <span style="color: #732E81;">"Email"</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I see <span style="color: #732E81;">"Password"</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I submit form <span style="color: #732E81;">"#UserLoginForm",{"data":{"User":{"password":"asdefx","email":"mandms@gmail.com"}}}</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I see in current url <span style="color: #732E81;">"feeds/my"</span></td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioSuccess" onclick="showHide('2', this)">[+] register (UserRegisterCept.php) (0.56s)</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioSuccess scenarioStepsTable" id="stepContainer2">
+      <tr>
+       <td class="stepName">I am on page <span style="color: #732E81;">"/users/register"</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I see in current url <span style="color: #732E81;">"/users/register"</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I see <span style="color: #732E81;">"Register"</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I see <span style="color: #732E81;">"Password"</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I submit form <span style="color: #732E81;">"#UserRegisterForm",{"data":{"User":{"password":"asdefx","email":"test_705user@gmail.com"}}}</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I see in current url <span style="color: #732E81;">"feeds/my"</span></td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+<tr>
+ <td>
+     <h3>Api Tests</h3>
+ </td>
+</tr>   <tr>
+    <td>
+     <p class="scenarioSuccess" onclick="showHide('3', this)">[+] delete some row as api user (DELETEFreeFeedByUserCept.php) (0.09s)</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioSuccess scenarioStepsTable" id="stepContainer3">
+      <tr>
+       <td class="stepName">I send delete <span style="color: #732E81;">"/api/my-free-repository/50c62db1ff1d83e806000001/"</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I see response code is <span style="color: #732E81;">"401"</span></td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioSuccess" onclick="showHide('4', this)">[+] get free records (api user ) (GETFreeFeedIndexCept.php) (0.28s)</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioSuccess scenarioStepsTable" id="stepContainer4">
+      <tr>
+       <td class="stepName">I send get <span style="color: #732E81;">"/api/test-repository"</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I see response code is <span style="color: #732E81;">"200"</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I see response is json <span style="color: #732E81;"></span></td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioSuccess" onclick="showHide('5', this)">[+] get free record (api user ) (GETFreeFeedRecordCept.php) (0.32s)</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioSuccess scenarioStepsTable" id="stepContainer5">
+      <tr>
+       <td class="stepName">I send get <span style="color: #732E81;">"/api/test-repository/50c8770fff1d832811000000"</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I see response code is <span style="color: #732E81;">"200"</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I see response is json <span style="color: #732E81;"></span></td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioSuccess" onclick="showHide('6', this)">[+] get free records from not completed repo (api user ) (GETFreeNotCompletedFeedIndexCept.php) (0.32s)</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioSuccess scenarioStepsTable" id="stepContainer6">
+      <tr>
+       <td class="stepName">I send get <span style="color: #732E81;">"/api/test-repository-free-nc"</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I see response code is <span style="color: #732E81;">"403"</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I see response is json <span style="color: #732E81;"></span></td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioSuccess" onclick="showHide('7', this)">[+] get paid records (api user) (GETPayedFeedIndexCept.php) (0.26s)</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioSuccess scenarioStepsTable" id="stepContainer7">
+      <tr>
+       <td class="stepName">I send get <span style="color: #732E81;">"/api/test-repository-paid"</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I see response code is <span style="color: #732E81;">"401"</span></td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioSuccess" onclick="showHide('8', this)">[+] get paid records with key ok (api user) (GETPayedFeedIndexKeyOkCept.php) (0.3s)</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioSuccess scenarioStepsTable" id="stepContainer8">
+      <tr>
+       <td class="stepName">I send get <span style="color: #732E81;">"/api/test-repository-paid?key=6b756d1b177f17bbb386a110867e1076660a25b1"</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I see response code is <span style="color: #732E81;">"200"</span></td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioSuccess" onclick="showHide('9', this)">[+] get paid with no key records (api user) (GETPayedFeedIndexNoKeyCept.php) (0.35s)</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioSuccess scenarioStepsTable" id="stepContainer9">
+      <tr>
+       <td class="stepName">I send get <span style="color: #732E81;">"/api/test-repository-paid"</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I see response code is <span style="color: #732E81;">"401"</span></td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioSuccess" onclick="showHide('10', this)">[+] get paid records with wrong key (api user) (GETPayedFeedIndexWrongKeyCept.php) (0.29s)</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioSuccess scenarioStepsTable" id="stepContainer10">
+      <tr>
+       <td class="stepName">I send get <span style="color: #732E81;">"/api/test-repository-paid?key=401"</span></td>
+      </tr>
+
+      <tr>
+       <td class="stepName">I see response code is <span style="color: #732E81;">"403"</span></td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioSuccess" onclick="showHide('11', this)">[+]  (RestGetSingleCept.php) (0.17s)</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioSuccess scenarioStepsTable" id="stepContainer11">
+
+     </table>
+    </td>
+   </tr>
+
+<tr>
+ <td>
+     <h3>Functional Tests</h3>
+ </td>
+</tr>   <tr>
+    <td>
+     <p class="scenarioSuccess" onclick="showHide('12', this)">[+]  (CheckUserExistsCept.php) (0.01s)</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioSuccess scenarioStepsTable" id="stepContainer12">
+      <tr>
+       <td class="stepName">I see in database <span style="color: #732E81;">"users",{"email":"wawrzyniak.mm@gmail.com"}</span></td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+<tr>
+ <td>
+     <h3>Unit Tests</h3>
+ </td>
+</tr>
+   <tr>
+    <td>
+	    <h2>Summary</h2>
+     <div id="stepContainerSummary">
+      <table border="0">
+       <tr>
+        <td width="250" class="scenarioSuccess">Successful scenarios:</td>
+        <td class="scenarioSuccessValue"><strong>12</strong></td>
+       </tr>
+       <tr>
+        <td class="scenarioFailed">Failed scenarios:</td>
+        <td class="scenarioFailedValue"><strong>0</strong></td>
+       </tr>
+       <tr>
+        <td class="scenarioSkipped">Skipped scenarios:</td>
+        <td class="scenarioSkippedValue"><strong>0</strong></td>
+       </tr>
+       <tr>
+        <td class="scenarioIncomplete">Incomplete scenarios:</td>
+        <td class="scenarioIncompleteValue"><strong>0</strong></td>
+       </tr>
+      </table>
+     </div>
+    </td>
+   </tr>
+  </table>
+ </div>
+ </body>
+</html>

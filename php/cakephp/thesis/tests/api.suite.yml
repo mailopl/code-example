@@ -1,0 +1,8 @@
+class_name: ApiGuy
+modules:
+    enabled: [PhpBrowser, REST, ApiHelper, Db]
+    config:
+      PhpBrowser: 
+          url: http://localhost/apigeum/
+      REST:
+          url: http://localhost/apigeum/

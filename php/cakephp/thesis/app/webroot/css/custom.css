@@ -1,0 +1,80 @@
+code {
+    color: #036FB6;
+}
+
+.fright {
+
+    float:right;
+}
+
+.csv-file {
+    float: right;
+    position: relative;
+    height: 20px;
+    margin-left: 5px;
+}
+
+.csv-file #file {
+    position: absolute;
+    bottom:0;
+    left:0;
+
+    with: 100%;
+    height: 20px;
+    opacity: 0;
+
+    width: 100px;
+    top: 0px;
+}
+
+.flash-success {
+    color:green;
+}
+
+.flash-error {
+    color:red;
+}
+
+.container:nth-child(2) {
+    margin-top:60px;
+}
+
+.feeds .help-inline {
+    padding-bottom:5px;
+}
+.red {
+    color:#E51400
+}
+
+.row .disabled {
+    opacity:0.3
+}
+
+.link-premium {
+    color: #ff6d2e;
+}
+.httpname label {
+    display: inline;
+    font-size: 16px;
+}
+
+.single-column{
+
+    float: left;
+}
+
+#FeedName {
+    width: 210px;
+    height: 15px;
+    vertical-align: middle;
+    margin-top: 7px;
+    margin-left: 5px;
+}
+
+#FeedDescription {
+    width:400px;
+}
+
+#FeedTyp {
+    width:415px;
+}

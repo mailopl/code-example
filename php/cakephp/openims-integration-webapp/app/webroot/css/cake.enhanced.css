@@ -1,0 +1,40 @@
+body, #content, h1, h2, #header h1, #header h1 a,#header h1 a:hover{
+	background: #eee;
+}
+
+#header h1 a{
+	color: #555;
+	font-size:15px;
+	font-weight:bold;
+}
+
+h2, div.actions h3, a, fieldset legend{
+	color:#3A87AD;
+}
+a{
+	text-decoration: none
+}
+
+form .submit input[type="submit"]{
+	float:right;
+}
+
+div.message{
+	background:#15A526;
+}
+#footer{
+	border-top: 3px solid #fff;
+}
+#footer ul{
+	width:150px;
+	float:left;
+	text-align:left;
+	list-style-type:none;
+}
+#footer ul li a{
+	margin-left:20px;
+}
+#footer ul li:first-child{
+color:#333;
+font-weight:bold;
+}
