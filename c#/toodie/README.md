@@ -8,4 +8,4 @@ Features:
     - Search
     - Update check
 
-![Toodie screen](https://github.com/mailopl/code-example/raw/master/c#/toodie/toodie-screen.png "Toodie screen")
+![Toodie screen](https://raw.github.com/mailopl/code-example/master/c%23/toodie/toodie-screen.png "Toodie screen")
