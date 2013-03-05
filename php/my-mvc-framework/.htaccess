@@ -1,0 +1,24 @@
+RewriteEngine On
+RewriteBase /mvc/
+
+#users/
+RewriteRule ^([a-z]+)/$ index.php?model=$1&action=index [L]
+#users/view
+RewriteRule ^([a-z]+)/([a-zA-Z]+)$ index.php?model=$1&action=$2 [L]
+#user/view/1
+RewriteRule ^([a-z]+)/([a-zA-Z]+)/([0-9]+)$ index.php?model=$1&action=$2&id=$3 [L]
+#user/view/1/page2
+RewriteRule ^([a-z]+)/([a-zA-Z]+)/([0-9]+)/page([0-9]+)/$ index.php?model=$1&action=$2&id=$3&page=$4 [L]
+#user/view/dotangelo
+RewriteRule ^([a-z]+)/([a-zA-Z]+)/([a-zA-Z0-9_-]+)$ index.php?model=$1&action=$2&slug=$3 [L]
+
+
+# Protect application and system files from being viewed
+RewriteRule ^(application|modules|system) - [F,L]
+
+# Allow any files or directories that exist to be displayed directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite all other URLs to index.php/URL
+RewriteRule . index.php [PT,L]

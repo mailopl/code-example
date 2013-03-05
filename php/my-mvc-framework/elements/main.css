@@ -1,0 +1,23 @@
+div#dropdown {
+  position:absolute;
+  width:250px;
+  background-color:white;
+  border:1px solid #888;
+  margin:0;
+  padding:0;
+}
+div#dropdown ul {
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+div#dropdown ul li.selected { background-color: #ffb;}
+div#dropdown ul li {
+  list-style-type:none;
+  display:block;
+  margin:0;
+  padding:2px;
+ font-size:11px;color:gray;
+ font-family:tahoma;
+  cursor:pointer;
+}
