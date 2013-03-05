@@ -1,0 +1,66 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Toodie.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Version" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1.0.0.0</Value>
+    </Setting>
+    <Setting Name="xmlURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://odd-it.pl/toodie/versionInfo.xml</Value>
+    </Setting>
+    <Setting Name="Language" Type="System.String" Scope="User">
+      <Value Profile="(Default)">pl-PL</Value>
+    </Setting>
+    <Setting Name="hideNotes" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="hideProjects" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="hideFinished" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="onClickEdit" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="empty_databaseConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=|DataDirectory|\Resources\empty_database.sdf&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;Microsoft.SqlServerCe.Client.3.5&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=|DataDirectory|\Resources\empty_database.sdf</Value>
+    </Setting>
+    <Setting Name="lastDatabaseFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="lastTenDatabases" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="xmlHeader" Type="System.String" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0"?&gt;
+&lt;ss:Workbook xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"&gt;
+    &lt;ss:Styles&gt;
+        &lt;ss:Style ss:ID="1"&gt;
+            &lt;ss:Font ss:Bold="1"/&gt;
+        &lt;/ss:Style&gt;
+    &lt;/ss:Styles&gt;
+    &lt;ss:Worksheet ss:Name="Sheet1"&gt;
+        &lt;ss:Table&gt;
+            &lt;ss:Column ss:Width="100"/&gt;
+            &lt;ss:Column ss:Width="250"/&gt;
+            &lt;ss:Column ss:Width="100"/&gt;
+            &lt;ss:Row ss:StyleID="1"&gt;
+                &lt;ss:Cell&gt;
+                    &lt;ss:Data ss:Type="String"&gt;Date&lt;/ss:Data&gt;
+                &lt;/ss:Cell&gt;
+                &lt;ss:Cell&gt;
+                    &lt;ss:Data ss:Type="String"&gt;Content&lt;/ss:Data&gt;
+                &lt;/ss:Cell&gt;
+                &lt;ss:Cell&gt;
+                    &lt;ss:Data ss:Type="String"&gt;Project&lt;/ss:Data&gt;
+                &lt;/ss:Cell&gt;
+            &lt;/ss:Row&gt;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

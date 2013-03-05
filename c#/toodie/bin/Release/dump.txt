@@ -1,0 +1,5 @@
+// Bug report file. Version 1.0.0.0, 2009-12-04 00:00:00\
+--------------------------------------------------------
+InvalidArgument=Value of '0' is not valid for 'index'.
+Parameter name: index
+Trace listView1_onMouseClick :0
